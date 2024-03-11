@@ -119,52 +119,6 @@
         </div>
     </div>
 
-    <!-- Modal Edit -->
-    <div class="fixed inset-0 z-50 overflow-auto bg-gray-500 bg-opacity-75" id="editDataModal" style="display: none;">
-        <div class="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2/4 bg-white rounded shadow-lg">
-            <div class="flex items-start justify-between p-5 border-b border-solid rounded-t border-blueGray-200">
-                <h3 class="text-2xl font-semibold">Edit Data Semester</h3>
-                <button type="button" class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 text-2xl leading-none font-semibold outline-none focus:outline-none" onclick="closeModal('editDataModal')">
-                    <span class="bg-transparent text-black opacity-5 h-6 w-6 text-xl block outline-none focus:outline-none">×</span>
-                </button>
-            </div>
-            <div class="relative p-6 flex-auto">
-                <!-- Form Edit Data Semester -->
-                <form method="POST" action="{{ route('superadmin.semesters.update', $semester->id) }}">
-                    @csrf
-                    @method('PUT')
-
-                    <!-- Nama Semester -->
-                    <div class="mb-4">
-                        <label for="editNamaSemester" class="block text-sm font-medium text-gray-600 dark:text-gray-200">
-                            Nama Semester
-                        </label>
-                        <input type="text" name="editNamaSemester" id="editNamaSemester" class="mt-1 p-2 border rounded-md w-full" required value="{{ $semester->nama_semester }}">
-                    </div>
-
-                    <!-- Deskripsi Semester -->
-                    <div class="mb-4">
-                        <label for="editDeskripsiSemester" class="block text-sm font-medium text-gray-600 dark:text-gray-200">
-                            Deskripsi Semester
-                        </label>
-                        <textarea name="editDeskripsiSemester" id="editDeskripsiSemester" class="mt-1 p-2 border rounded-md w-full" required>{{ $semester->deskripsi_semester }}</textarea>
-                    </div>
-
-                    <!-- Tombol Submit dan Batal -->
-                    <div class="flex items-center justify-between mt-4">
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Simpan
-                        </button>
-                        <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="closeModal('editDataModal')">
-                            Batal
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "block";
@@ -172,15 +126,6 @@
 
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = "none";
-        }
-
-        function editModal(namaSemester, deskripsiSemester) {
-            // Set nilai pada form edit
-            document.getElementById('editNamaSemester').value = namaSemester;
-            document.getElementById('editDeskripsiSemester').value = deskripsiSemester;
-
-            // Tampilkan modal edit
-            openModal('editDataModal');
         }
     </script>
 
