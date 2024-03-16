@@ -10,6 +10,7 @@ use App\Http\Controllers\SuperAdmin\SemesterController;
 use App\Http\Controllers\SuperAdmin\KelasController;
 use App\Http\Controllers\SuperAdmin\SiswaController;
 use App\Http\Controllers\Admin\AdminGuruController;
+use App\Http\Controllers\User\UserSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,8 +108,9 @@ Route::prefix('admin')->middleware(['auth', 'checkRole:admin'])->group(function 
     Route::get('/gurus', [AdminGuruController::class, 'index'])->name('admin.gurus.index');
 });
 
-Route::middleware(['checkRole:user,admin,superadmin'])->group(function () {
-    // Routes yang memerlukan user, admin, atau superadmin role
+Route::prefix('user')->middleware(['auth', 'checkRole:user'])->group(function () {
+    // Routes yang memerlukan admin atau superadmin role
+    Route::get('/siswas', [UserSiswaController::class, 'index'])->name('user.siswas.index');
 });
 
 
