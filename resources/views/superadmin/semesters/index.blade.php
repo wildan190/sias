@@ -55,7 +55,8 @@
                                     {{ $semester->deskripsi_semester }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <button onclick="editModal('{{ $semester->nama_semester }}', '{{ $semester->deskripsi_semester }}')">Edit</button>
+                                    <a href="{{ route('superadmin.semesters.show', $semester->id) }}" class="text-blue-600 hover:text-blue-900">Show</a>
+                                    <a href="{{ route('superadmin.semesters.edit', $semester->id) }}" class="text-yellow-600 hover:text-yellow-900">Edit</a>
                                     <form action="{{ route('superadmin.semesters.destroy', $semester->id) }}" method="POST" class="inline">
                                         @csrf
                                         @method('DELETE')

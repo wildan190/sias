@@ -4,6 +4,7 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Semester;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -72,6 +73,13 @@ class SemesterController extends Controller
 
         // Redirect atau refresh halaman
         return redirect()->route('superadmin.semesters.index');
+    }
+
+    public function show($id)
+    {
+        $semester = Semester::findOrFail($id);
+        $siswas = Siswa::where('semester_id', $semester->id)->get();
+        return view('superadmin.semesters.show', compact('semester', 'siswas'));
     }
 
     // Contoh method untuk menghapus data
