@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Models\Kelas;
 use App\Models\Guru;
+use App\Models\Siswa;
 use App\Models\ProgramStudi;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -86,8 +87,8 @@ class KelasController extends Controller
     public function show($id)
     {
         $kelas = Kelas::findOrFail($id);
-
-        return view('superadmin.kelas.show', compact('kelas'));
+        $siswas = Siswa::where('kelas_id', $kelas->id)->get();
+        return view('superadmin.kelas.show', compact('kelas', 'siswas'));
     }
 
     public function destroy($id)

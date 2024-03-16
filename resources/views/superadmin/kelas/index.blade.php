@@ -51,6 +51,7 @@
                                     {{ $kelas->waliKelas->name }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <a href="{{ route('superadmin.kelas.show', $kelas->id) }}" class="text-green-600 hover:text-green-900">Show</a>
                                 <a href="{{ route('superadmin.kelas.edit', $kelas->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                     <form action="{{ route('superadmin.kelas.destroy', $kelas->id) }}" method="POST" class="inline">
                                         @csrf
