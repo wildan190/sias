@@ -9,6 +9,7 @@ use App\Models\Guru;
 use App\Models\Kelas;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class JadwalGuruController extends Controller
 {
@@ -33,6 +34,10 @@ class JadwalGuruController extends Controller
 
         // Ambil data jadwal guru dengan pagination
         $jadwal_gurus = $query->paginate(10);
+
+        foreach ($jadwal_gurus as $jadwal_guru) {
+            $jadwal_guru->hari = Carbon::parse($jadwal_guru->hari)->translatedFormat('l');
+        }
 
         // Render view index.blade.php dan kirimkan data jadwal_gurus dan search ke view
         return view('superadmin.jadwal_gurus.index', compact('jadwal_gurus', 'search'));

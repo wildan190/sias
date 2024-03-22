@@ -11,6 +11,7 @@ use App\Http\Controllers\SuperAdmin\KelasController;
 use App\Http\Controllers\SuperAdmin\SiswaController;
 use App\Http\Controllers\SuperAdmin\JadwalGuruController;
 use App\Http\Controllers\Admin\AdminGuruController;
+use App\Http\Controllers\Admin\AdminJadwalGuruController;
 use App\Http\Controllers\User\UserSiswaController;
 
 /*
@@ -113,12 +114,14 @@ Route::prefix('superadmin')->middleware(['auth', 'checkRole:superadmin'])->group
 });
 
 Route::prefix('admin')->middleware(['auth', 'checkRole:admin'])->group(function () {
-    // Routes yang memerlukan admin atau superadmin role
+    // Profile Guru
     Route::get('/gurus', [AdminGuruController::class, 'index'])->name('admin.gurus.index');
+    // Jadwal Guru
+    Route::get('/jadwal-guru', [AdminJadwalGuruController::class, 'index'])->name('admin.jadwal_gurus.index');
 });
 
 Route::prefix('user')->middleware(['auth', 'checkRole:user'])->group(function () {
-    // Routes yang memerlukan admin atau superadmin role
+    // Profile Siswa
     Route::get('/siswas', [UserSiswaController::class, 'index'])->name('user.siswas.index');
 });
 

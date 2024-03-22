@@ -32,7 +32,7 @@
                             <select name="mata_pelajaran_id" id="mata_pelajaran_id" class="mt-1 p-2 border rounded-md w-full" required>
                                 <option value="" disabled selected>Pilih Mata Pelajaran</option>
                                 @foreach($mapels as $mapel)
-                                <option value="{{ $mapel->id }}">{{ $mapel->nama_mapel }}</option>
+                                <option value="{{ $mapel->id }}">{{ $mapel->nama_mapel }} - {{ $mapel->mapel_id }}</option>
                                 @endforeach
                             </select>
                         </div>
