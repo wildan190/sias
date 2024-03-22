@@ -9,6 +9,7 @@ use App\Http\Controllers\SuperAdmin\MapelController;
 use App\Http\Controllers\SuperAdmin\SemesterController;
 use App\Http\Controllers\SuperAdmin\KelasController;
 use App\Http\Controllers\SuperAdmin\SiswaController;
+use App\Http\Controllers\SuperAdmin\JadwalGuruController;
 use App\Http\Controllers\Admin\AdminGuruController;
 use App\Http\Controllers\User\UserSiswaController;
 
@@ -32,7 +33,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    
 });
 
 Route::prefix('superadmin')->middleware(['auth', 'checkRole:superadmin'])->group(function () {
@@ -100,7 +100,16 @@ Route::prefix('superadmin')->middleware(['auth', 'checkRole:superadmin'])->group
     Route::get('/siswas/{siswa}', [SiswaController::class, 'show'])->name('superadmin.siswas.show');
     Route::delete('/siswas/{siswa}', [SiswaController::class, 'destroy'])->name('superadmin.siswas.destroy');
     Route::match(['get', 'post'], '/superadmin/siswas/{siswa}/export-pdf', [SiswaController::class, 'exportPdf'])
-    ->name('superadmin.siswas.exportPdf');
+        ->name('superadmin.siswas.exportPdf');
+
+    // Rute untuk JadwalGuruController
+    Route::get('/jadwal-gurus', [JadwalGuruController::class, 'index'])->name('superadmin.jadwal_gurus.index');
+    Route::get('/jadwal-gurus/create', [JadwalGuruController::class, 'create'])->name('superadmin.jadwal_gurus.create');
+    Route::post('/jadwal-gurus', [JadwalGuruController::class, 'store'])->name('superadmin.jadwal_gurus.store');
+    Route::get('/jadwal-gurus/{jadwal_guru}/edit', [JadwalGuruController::class, 'edit'])->name('superadmin.jadwal_gurus.edit');
+    Route::put('/jadwal-gurus/{jadwal_guru}', [JadwalGuruController::class, 'update'])->name('superadmin.jadwal_gurus.update');
+    Route::get('/jadwal-gurus/{jadwal_guru}', [JadwalGuruController::class, 'show'])->name('superadmin.jadwal_gurus.show');
+    Route::delete('/jadwal-gurus/{jadwal_guru}', [JadwalGuruController::class, 'destroy'])->name('superadmin.jadwal_gurus.destroy');
 });
 
 Route::prefix('admin')->middleware(['auth', 'checkRole:admin'])->group(function () {
