@@ -32,6 +32,9 @@
                     <x-nav-link :href="route('user.siswas.index')" :active="request()->routeIs('user.siswas.index')">
                         {{ __('Detail Siswa') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('user.jadwal.index')" :active="request()->routeIs('user.jadwal_gurus.index')">
+                        {{ __('Jadwal') }}
+                    </x-nav-link>
                     @endif
                 </div>
 
@@ -106,6 +109,9 @@
             @if(auth()->user()->hasRole('user'))
             <x-responsive-nav-link :href="route('user.siswas.index')" :active="request()->routeIs('user.siswas.index')">
                 {{ __('Detail Siswa') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('user.jadwal.index')" :active="request()->routeIs('user.jadwal.index')">
+                {{ __('Jadwal') }}
             </x-responsive-nav-link>
             @endif
         </div>
