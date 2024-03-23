@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('admin.gurus.index')" :active="request()->routeIs('admin.gurus.index')">
                         {{ __('Detail Guru') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.jadwal_gurus.index')" :active="request()->routeIs('admin.jadwal_gurus.index')">
+                        {{ __('Jadwal') }}
+                    </x-nav-link>
                     @endif
                     @if(auth()->user()->hasRole('user'))
                     <x-nav-link :href="route('user.siswas.index')" :active="request()->routeIs('user.siswas.index')">
@@ -95,6 +98,9 @@
             @if(auth()->user()->hasRole('admin'))
             <x-responsive-nav-link :href="route('admin.gurus.index')" :active="request()->routeIs('admin.gurus.index')">
                 {{ __('Detail Guru') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.jadwal_gurus.index')" :active="request()->routeIs('admin.jadwal_gurus.index')">
+                {{ __('Jadwal') }}
             </x-responsive-nav-link>
             @endif
             @if(auth()->user()->hasRole('user'))

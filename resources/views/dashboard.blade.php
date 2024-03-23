@@ -74,6 +74,14 @@
                             </svg>
                             Manajemen Siswa
                         </a>
+
+                        <!-- Management Kelas -->
+                        <a href="{{ route('superadmin.jadwal_gurus.index') }}" class="bg-blue-200 p-6 rounded-lg hover:bg-blue-300 transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8 mb-4 text-blue-500">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                            Teacher Schedule Management
+                        </a>
                     </div>
                 </div>
                 @endif
