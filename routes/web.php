@@ -13,6 +13,7 @@ use App\Http\Controllers\SuperAdmin\JadwalGuruController;
 use App\Http\Controllers\Admin\AdminGuruController;
 use App\Http\Controllers\Admin\AdminJadwalGuruController;
 use App\Http\Controllers\User\UserSiswaController;
+use App\Http\Controllers\User\SiswaJadwalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,6 +124,8 @@ Route::prefix('admin')->middleware(['auth', 'checkRole:admin'])->group(function 
 Route::prefix('user')->middleware(['auth', 'checkRole:user'])->group(function () {
     // Profile Siswa
     Route::get('/siswas', [UserSiswaController::class, 'index'])->name('user.siswas.index');
+    // Jadwal Pelajaran Siswa
+    Route::get('/jadwal', [SiswaJadwalController::class, 'index'])->name('user.jadwal.index');
 });
 
 
