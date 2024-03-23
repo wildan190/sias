@@ -21,7 +21,7 @@ class JadwalGuruController extends Controller
 
         // Lakukan filter berdasarkan pencarian jika ada
         if ($search) {
-            $query->where('mata_pelajaran', 'like', '%' . $search . '%')
+            $query->where('mata_pelajaran_id', 'like', '%' . $search . '%')
                 ->orWhereHas('guru', function ($query) use ($search) {
                     $query->where('name', 'like', '%' . $search . '%');
                 })
