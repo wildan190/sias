@@ -32,7 +32,7 @@
                     <x-nav-link :href="route('user.siswas.index')" :active="request()->routeIs('user.siswas.index')">
                         {{ __('Detail Siswa') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('user.jadwal.index')" :active="request()->routeIs('user.jadwal_gurus.index')">
+                    <x-nav-link :href="route('user.jadwal.index')" :active="request()->routeIs('user.jadwal.index')">
                         {{ __('Jadwal') }}
                     </x-nav-link>
                     @endif
