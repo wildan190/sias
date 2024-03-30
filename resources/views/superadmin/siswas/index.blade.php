@@ -37,12 +37,6 @@
                                     Nama Siswa
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Tanggal Lahir
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Nomor Telepon
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Kelas
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -67,12 +61,6 @@
                                 </td>
                                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $item->nama_siswa }}
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item->tanggal_lahir_siswa }}
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item->nomor_telepon_siswa }}
                                 </td>
                                 <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $item->kelas->nama_kelas }}
