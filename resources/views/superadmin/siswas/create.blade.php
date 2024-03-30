@@ -75,7 +75,7 @@
                                     Gender Siswa
                                 </label>
                                 <select name="gender_siswa" id="gender_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                    <option value="Laki-Laki">Laki-Laki</option>
+                                    <option value="Laki-laki">Laki-Laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
                             </div>
@@ -86,12 +86,12 @@
                                     Agama Siswa
                                 </label>
                                 <select name="agama_siswa" id="agama_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                    <option value="Islam">Islam</option>
-                                    <option value="Kristen">Kristen</option>
-                                    <option value="Katolik">Katolik</option>
-                                    <option value="Hindu">Hindu</option>
-                                    <option value="Budha">Budha</option>
-                                    <option value="Konghuchu">Konghuchu</option>
+                                    <option value="ISLAM">Islam</option>
+                                    <option value="KRISTEN">Kristen</option>
+                                    <option value="KATOLIK">Katolik</option>
+                                    <option value="HINDU">Hindu</option>
+                                    <option value="BUDHA">Budha</option>
+                                    <option value="KONGHUCHU">Konghuchu</option>
                                 </select>
                             </div>
                             <!-- Golongan Darah -->
