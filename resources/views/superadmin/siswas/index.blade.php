@@ -34,15 +34,6 @@
                                     NISN
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Nama Siswa
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Tanggal Lahir
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    Nomor Telepon
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Kelas
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -61,29 +52,24 @@
                         </thead>
                         <tbody>
                             @foreach($siswas as $item)
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item->nisn }}
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item->nama_siswa }}
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item->tanggal_lahir_siswa }}
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item->nomor_telepon_siswa }}
-                                </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img class="w-10 h-10 rounded-full" src="{{ asset('images/' . $item->foto_siswa) }}">
+                                    <div class="ps-3">
+                                        <div class="text-base font-semibold">{{$item->nama_siswa}}</div>
+                                        <div class="font-normal text-gray-500">{{$item->nisn}}</div>
+                                    </div>
+                                </th>
+                                <td class="px-6 py-4">
                                     {{ $item->kelas->nama_kelas }}
                                 </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <td class="px-6 py-4">
                                     {{ $item->prodi->nama_prodi }}
                                 </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <td class="px-6 py-4">
                                     {{ $item->semester->nama_semester }}
                                 </td>
-                                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <td class="px-6 py-4">
                                 @if($item->status == 'aktif')
                                     <span class="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"><span class="w-2 h-2 me-1 bg-blue-500 rounded-full"></span>{{ $item->status }}</span>
                                     @elseif($item->status == 'lulus')
@@ -94,7 +80,7 @@
                                     {{ $item->status }}
                                     @endif
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <td class="px-6 py-4">
                                     <a href="{{ route('superadmin.siswas.show', $item->id) }}" class="text-blue-600 hover:text-blue-900">Show</a>
                                     <a href="{{ route('superadmin.siswas.edit', $item->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                                     <form action="{{ route('superadmin.siswas.destroy', $item->id) }}" method="POST" class="inline">

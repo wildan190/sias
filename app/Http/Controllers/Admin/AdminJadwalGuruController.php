@@ -12,19 +12,25 @@ class AdminJadwalGuruController extends Controller
 {
     public function index()
     {
-        // Ambil username guru yang sedang terautentikasi
-        $username = Auth::user()->username;
+        try {
+            $user = Auth::user();
+            if (!$user) {
+                throw new \Exception("User not authenticated.");
+            }
 
-        // Cari jadwal guru berdasarkan username
-        $jadwalGurus = JadwalGuru::whereHas('guru', function ($query) use ($username) {
-            $query->where('username', $username);
-        })->get();
+            $username = $user->username;
+            $jadwalGurus = JadwalGuru::whereHas('guru', function ($query) use ($username) {
+                $query->where('username', $username);
+            })->get();
 
-        // Memformat tanggal menjadi nama hari menggunakan Carbon
-        foreach ($jadwalGurus as $jadwal_guru) {
-            $jadwal_guru->hari = Carbon::parse($jadwal_guru->hari)->translatedFormat('l');
+            foreach ($jadwalGurus as $jadwalGuru) {
+                $jadwalGuru->hari = Carbon::parse($jadwalGuru->hari)->translatedFormat('l');
+            }
+
+            return view('admin.jadwal_gurus.index', compact('jadwalGurus'));
+        } catch (\Exception $e) {
+            // Handle exceptions here, e.g., log them or redirect to an error page.
+            return response()->view('errors.500', [], 500);
         }
-
-        return view('admin.jadwal_gurus.index', compact('jadwalGurus'));
     }
 }

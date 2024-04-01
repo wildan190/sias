@@ -144,7 +144,7 @@
                             <label for="foto_siswa" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Foto Siswa
                             </label>
-                            <input type="file" name="foto_siswa" id="foto_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <input type="file" name="foto_siswa" id="foto_siswa" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
                         </div>
                         <button type="button" onclick="nextStep(2)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Selanjutnya

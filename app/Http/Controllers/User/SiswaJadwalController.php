@@ -12,16 +12,23 @@ class SiswaJadwalController extends Controller
 {
     public function index()
     {
-        // Ambil id kelas siswa yang terautentikasi
-        $kelas_id = Auth::user()->siswa->kelas_id;
+        $kelasId = Auth::user()->siswa->kelas_id;
+        $jadwalPelajaran = $this->getJadwalPelajaran($kelasId);
 
-        // Cari jadwal pelajaran siswa berdasarkan id kelas
-        $jadwalPelajaran = JadwalGuru::where('kelas_id', $kelas_id)->get();
-
-        foreach ($jadwalPelajaran as $jadwal_guru) {
-            $jadwal_guru->hari = Carbon::parse($jadwal_guru->hari)->translatedFormat('l');
+        foreach ($jadwalPelajaran as $jadwalGuru) {
+            $jadwalGuru->hari = $this->formatHari($jadwalGuru->hari);
         }
 
         return view('user.jadwal.index', compact('jadwalPelajaran'));
+    }
+
+    private function getJadwalPelajaran($kelasId)
+    {
+        return JadwalGuru::where('kelas_id', $kelasId)->get();
+    }
+
+    private function formatHari($hari)
+    {
+        return Carbon::parse($hari)->translatedFormat('l');
     }
 }

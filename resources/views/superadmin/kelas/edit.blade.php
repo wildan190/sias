@@ -26,18 +26,18 @@
 
                         <!-- Nama Kelas -->
                         <div class="mb-4">
-                            <label for="nama_kelas" class="block text-sm font-medium text-gray-600 dark:text-gray-200">
+                            <label for="nama_kelas" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Nama Kelas
                             </label>
-                            <input type="text" name="nama_kelas" id="nama_kelas" class="mt-1 p-2 border rounded-md w-full" required placeholder="Masukkan Nama Kelas" value="{{ $kelas->nama_kelas }}">
+                            <input type="text" name="nama_kelas" id="nama_kelas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required placeholder="Masukkan Nama Kelas" value="{{ $kelas->nama_kelas }}">
                         </div>
 
                         <!-- Prodi -->
                         <div class="mb-4">
-                            <label for="prodi_id" class="block text-sm font-medium text-gray-600 dark:text-gray-200">
+                            <label for="prodi_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Program Studi
                             </label>
-                            <select name="prodi_id" id="prodi_id" class="mt-1 p-2 border rounded-md w-full" required>
+                            <select name="prodi_id" id="prodi_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                                 @foreach($prodis as $prodi)
                                 <option value="{{ $prodi->id }}" {{ $prodi->id == $kelas->prodi_id ? 'selected' : '' }}>{{ $prodi->nama_prodi }}</option>
                                 @endforeach
@@ -46,10 +46,10 @@
 
                         <!-- Wali Kelas -->
                         <div class="mb-4">
-                            <label for="wali_kelas_id" class="block text-sm font-medium text-gray-600 dark:text-gray-200">
+                            <label for="wali_kelas_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Wali Kelas
                             </label>
-                            <select name="wali_kelas_id" id="wali_kelas_id" class="mt-1 p-2 border rounded-md w-full" required>
+                            <select name="wali_kelas_id" id="wali_kelas_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                                 @foreach($gurus as $guru)
                                 <option value="{{ $guru->id }}" {{ $guru->id == $kelas->wali_kelas_id ? 'selected' : '' }}>{{ $guru->name }}</option>
                                 @endforeach
