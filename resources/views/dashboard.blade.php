@@ -13,7 +13,7 @@
                 @if(Auth::user()->hasRole('superadmin'))
                 <div class="p-6">
                     <div class="p-6 bg-blue-200 text-blue-900">
-                        {{ __("Welcome Super Admin!") }}
+                        <marquee>{{ __("Welcome Super Admin!") }}</marquee>
                     </div>
                 </div>
                 @endif
