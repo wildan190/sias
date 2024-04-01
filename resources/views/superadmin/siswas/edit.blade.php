@@ -68,7 +68,7 @@
                                 Gender Siswa
                             </label>
                             <select name="gender_siswa" id="gender_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                <option value="Laki-Laki" @if(old('gender_siswa', $siswa->gender_siswa) == 'Laki-Laki') selected @endif>Laki-Laki</option>
+                                <option value="Laki-laki" @if(old('gender_siswa', $siswa->gender_siswa) == 'Laki-Laki') selected @endif>Laki-Laki</option>
                                 <option value="Perempuan" @if(old('gender_siswa', $siswa->gender_siswa) == 'Perempuan') selected @endif>Perempuan</option>
                             </select>
                         </div>
@@ -79,12 +79,12 @@
                                 Agama Siswa
                             </label>
                             <select name="agama_siswa" id="agama_siswa" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                <option value="Islam" @if(old('agama_siswa', $siswa->agama_siswa) == 'Islam') selected @endif>Islam</option>
-                                <option value="Kristen" @if(old('agama_siswa', $siswa->agama_siswa) == 'Kristen') selected @endif>Kristen</option>
-                                <option value="Katolik" @if(old('agama_siswa', $siswa->agama_siswa) == 'Katolik') selected @endif>Katolik</option>
-                                <option value="Hindu" @if(old('agama_siswa', $siswa->agama_siswa) == 'Hindu') selected @endif>Hindu</option>
-                                <option value="Budha" @if(old('agama_siswa', $siswa->agama_siswa) == 'Budha') selected @endif>Budha</option>
-                                <option value="Konghuchu" @if(old('agama_siswa', $siswa->agama_siswa) == 'Konghuchu') selected @endif>Konghuchu</option>
+                                <option value="ISLAM" @if(old('agama_siswa', $siswa->agama_siswa) == 'Islam') selected @endif>Islam</option>
+                                <option value="KRISTEN" @if(old('agama_siswa', $siswa->agama_siswa) == 'Kristen') selected @endif>Kristen</option>
+                                <option value="KATOLIK" @if(old('agama_siswa', $siswa->agama_siswa) == 'Katolik') selected @endif>Katolik</option>
+                                <option value="HINDU" @if(old('agama_siswa', $siswa->agama_siswa) == 'Hindu') selected @endif>Hindu</option>
+                                <option value="BUDHA" @if(old('agama_siswa', $siswa->agama_siswa) == 'Budha') selected @endif>Budha</option>
+                                <option value="KONGHUCU" @if(old('agama_siswa', $siswa->agama_siswa) == 'Konghuchu') selected @endif>Konghuchu</option>
                             </select>
                         </div>
 
